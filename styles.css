@@ -19,8 +19,27 @@
 
 body {
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+#resetButton {
+    margin-bottom: 20px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
 }
