@@ -1,6 +1,5 @@
 .square {
     background-color: black;
-    margin: 1px;
     flex-grow: 1;
     cursor: pointer;
 }
@@ -9,11 +8,13 @@
     display: flex;
     justify-content: center;
     flex-grow: 1;
+    gap: 1px;
 }
 
 #squaresContainer {
     display: flex;
     flex-direction: column;
+    gap: 1px;
     width: 700px;
     height: 700px;
 }
