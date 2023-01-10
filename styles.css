@@ -1,0 +1,26 @@
+.square {
+    background-color: black;
+    margin: 1px;
+    flex-grow: 1;
+}
+
+.squaresRow {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#squaresContainer {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 700px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
