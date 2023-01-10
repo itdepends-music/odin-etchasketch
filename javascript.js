@@ -1,5 +1,3 @@
-const squaresContainer = document.querySelector("#squaresContainer");
-
 function createDivs(n) {
     for (i = 0; i < n; i++ ) {
         const row = document.createElement('div');
@@ -18,8 +16,20 @@ function createDivs(n) {
     }
 }
 
+function resetButtonHandler() {
+    while (squaresContainer.hasChildNodes()) {
+        squaresContainer.removeChild(squaresContainer.firstElementChild);
+    }
+
+    createDivs(16);
+}
+
 function hoverHandler(e) {
     e.target.style.backgroundColor = 'White';
 }
+
+const squaresContainer = document.querySelector("#squaresContainer");
+const resetButton = document.querySelector("#resetButton");
+resetButton.addEventListener('click', resetButtonHandler);
 
 createDivs(16);
