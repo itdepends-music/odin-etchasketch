@@ -17,11 +17,26 @@ function createDivs(n) {
 }
 
 function resetButtonHandler() {
+    // delete divs
     while (squaresContainer.hasChildNodes()) {
         squaresContainer.removeChild(squaresContainer.firstElementChild);
     }
 
-    createDivs(16);
+    createDivs(getSize());
+}
+
+function getSize() {
+    let size = Number(prompt("Enter size of canvas:"));
+
+    if (isNaN(size) || !(size | 0) || (size <= 0)) {
+        alert("Invalid size. Please enter a positive integer.");
+        size = getSize();   
+    } else if (size > 100) {
+        alert("Size too large. Setting to max size of 100x100.");
+        size = 100;
+    }
+
+    return size;
 }
 
 function hoverHandler(e) {
