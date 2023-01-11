@@ -40,7 +40,12 @@ function getSize() {
 }
 
 function hoverHandler(e) {
-    e.target.style.backgroundColor = 'White';
+    e.target.style.backgroundColor = getColor(50);
+}
+
+function getColor(brightness) {
+    hue = Math.random(); // generate random hue in turns
+    return `hsl(${hue}turn 100% ${brightness}%)`;
 }
 
 const squaresContainer = document.querySelector("#squaresContainer");
