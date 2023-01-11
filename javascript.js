@@ -6,7 +6,7 @@ function createDivs(n) {
         for (j = 0; j < n; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
-
+            square.setAttribute('data-brightness', 90); // avoid 90% brightness colors
             square.addEventListener('mouseenter', hoverHandler);
 
             row.appendChild(square);
@@ -40,12 +40,23 @@ function getSize() {
 }
 
 function hoverHandler(e) {
-    e.target.style.backgroundColor = getColor(50);
+    const lastBrightness = Number(e.target.getAttribute('data-brightness'));
+    const newBrightness = decideBrightness(lastBrightness);
+    e.target.setAttribute('data-brightness', newBrightness);
+    e.target.style.backgroundColor = getColor(newBrightness);
 }
 
 function getColor(brightness) {
     hue = Math.random(); // generate random hue in turns
     return `hsl(${hue}turn 100% ${brightness}%)`;
+}
+
+function decideBrightness(lastBrightness) {
+    if (lastBrightness > 30) {
+        return lastBrightness - 10;
+    } else {
+        return 30;
+    }
 }
 
 const squaresContainer = document.querySelector("#squaresContainer");
